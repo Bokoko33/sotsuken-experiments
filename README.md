@@ -1,4 +1,4 @@
-# sotsuken-site
+# sotsuken-experiments
 
 ## Build Setup
 
