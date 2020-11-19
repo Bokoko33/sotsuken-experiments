@@ -1,0 +1,10 @@
+body {
+  cursor: none;
+}
+
+.br-touch {
+  display: none;
+  @include device-touch {
+    display: inline;
+  }
+}
