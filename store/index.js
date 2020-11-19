@@ -1,6 +1,6 @@
 import style from '~/assets/scss/base/_variable.scss';
 
-const totalExpNum = 10;
+const totalExpNum = 9;
 const questAnswer = [];
 for (let i = 0; i < totalExpNum; i++) {
   questAnswer[i] = -1;
