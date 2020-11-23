@@ -19,7 +19,7 @@
       <div class="quest__link">
         <ClickLink
           :next-path="nextPath"
-          :disabled="selectedId === -1"
+          :disabled="selectedId === 999"
           :click-func="setAnswer"
         />
       </div>
@@ -32,13 +32,15 @@ export default {
   data() {
     return {
       radios: [
+        { id: -3, text: 'かなり軽い' },
+        { id: -2, text: '軽い' },
+        { id: -1, text: 'やや軽い' },
         { id: 0, text: '変わらない' },
         { id: 1, text: 'やや重たい' },
         { id: 2, text: '重たい' },
         { id: 3, text: 'かなり重たい' },
-        { id: 4, text: '非常に重たい' },
       ],
-      selectedId: -1,
+      selectedId: 999, // 初期値
     };
   },
   computed: {
