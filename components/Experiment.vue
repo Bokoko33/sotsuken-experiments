@@ -65,6 +65,9 @@ export default {
   display: flex;
   justify-content: center;
   align-content: center;
+  @include device-touch {
+    padding-top: 8vh;
+  }
 }
 
 .exp__num {
@@ -78,6 +81,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include device-touch {
+    font-size: 14px;
+  }
 }
 
 .exp__content {
