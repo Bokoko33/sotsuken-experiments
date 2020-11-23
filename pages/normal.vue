@@ -19,16 +19,18 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 10;
+  padding: 10vh 10vw;
   top: 0;
   left: 0;
   background-color: white;
+  @include device-touch {
+    padding-top: 5vh;
+  }
 }
 
 .normal__heading {
   width: 100%;
   text-align: center;
-  margin-top: 10vh;
   @include device-touch {
     font-size: 16px;
   }
@@ -39,5 +41,8 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 20vh;
+  @include device-touch {
+    bottom: 45vh;
+  }
 }
 </style>
