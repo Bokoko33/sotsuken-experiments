@@ -8,12 +8,16 @@ for (let i = 0; i < totalExpNum; i++) {
 
 export const state = () => ({
   breakPoint: Number(style.breakPointTablet.replace('px', '')),
+  defaultMouseSpeed: -1,
   totalExpNum,
   questAnswer,
-  expNumber: 0,
+  expNumber: 1,
 });
 
 export const mutations = {
+  setDefaultMouseSpeed(state, value) {
+    state.defaultMouseSpeed = value;
+  },
   addExpNumber(state) {
     state.expNumber++;
   },
