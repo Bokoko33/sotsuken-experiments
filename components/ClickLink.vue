@@ -74,7 +74,7 @@ export default {
     },
     clickLink() {
       if (this.hover) {
-        // 回答関数を実行
+        // アンケート時は回答用の関数を実行
         if (this.clickFunc) this.clickFunc();
 
         if (this.$route.name === 'normal') {

@@ -1,8 +1,8 @@
 <template>
   <div class="quest">
     <div class="quest__content">
-      <h2 class="quest__heading">アンケートにお答えください</h2>
-      <p class="quest__question">通常のカーソルの動きと比べて・・・</p>
+      <h2 class="quest__heading">当てはまるものを選択してください</h2>
+      <p class="quest__question">通常のカーソルの動きと比べて...</p>
       <ul class="quest__radio">
         <li
           v-for="(radio, index) in radios"
@@ -82,14 +82,23 @@ export default {
   max-width: 1000px;
   background-color: white;
   padding: 40px;
+  @include device-touch {
+    height: 90%;
+  }
 }
 
 .quest__heading {
   text-align: center;
+  @include device-touch {
+    font-size: 18px;
+  }
 }
 
 .quest__question {
   margin-top: 10vh;
+  @include device-touch {
+    margin-top: 5vh;
+  }
 }
 
 .quest__radio {
@@ -98,28 +107,32 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  &::before {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
+  @include device-touch {
+    flex-direction: column;
   }
+  // &::before {
+  //   display: block;
+  //   content: '';
+  //   width: 100%;
+  //   height: 2px;
+  //   background-color: black;
+  //   position: absolute;
+  //   top: 50%;
+  //   @include device-touch {
+  //     display: none;
+  //   }
+  // }
 }
 
 .quest__radio-item {
   position: relative;
-  width: 80px;
-  height: 80px;
-  @include device-touch {
-    width: 40px;
-    height: 40px;
-  }
 }
 
 .quest__link {
   width: 100px;
   margin: 20vh auto 0;
+  @include device-touch {
+    margin-top: 5vh;
+  }
 }
 </style>
