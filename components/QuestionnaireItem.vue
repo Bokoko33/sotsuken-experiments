@@ -1,10 +1,8 @@
 <template>
-  <div
-    ref="item"
-    class="quest-item"
-    :class="{ hover: hover, selected: selected }"
-  >
-    <div class="quest-item__num">{{ radio.id }}</div>
+  <div ref="item" class="quest-item">
+    <div class="quest-item__num" :class="{ hover: hover, selected: selected }">
+      {{ radio.id }}
+    </div>
     <div class="quest-item__text">{{ radio.text }}</div>
   </div>
 </template>
@@ -90,28 +88,40 @@ export default {
 
 <style lang="scss" scoped>
 .quest-item {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: solid 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include device-touch {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+}
+
+.quest-item__num {
+  width: 60px;
+  height: 60px;
   background-color: white;
+  border-radius: 50%;
+  border: solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include device-touch {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+  }
 }
 
 .quest-item__text {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
   text-align: center;
+  margin-top: 10px;
   @include device-touch {
-    width: 48px;
-    font-size: 10px;
-    top: 50px;
+    text-align: left;
+    margin-top: 0;
   }
 }
 
@@ -122,5 +132,6 @@ export default {
 .selected {
   border: solid 1px orange;
   background-color: orange;
+  color: white;
 }
 </style>
