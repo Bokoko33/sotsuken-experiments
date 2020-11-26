@@ -7,10 +7,10 @@ class InterFace {
     this.cursor = document.getElementById('cursor');
     this.trackpad = document.getElementById('trackpad');
     // 入力座標
-    this.inputPos = { x: 0, y: 0 };
+    this.inputPos = { x: 20, y: 20 }; // 見えやすい初期値
 
     // カーソルの描画座標
-    this.cursorPos = { x: 0, y: 0 };
+    this.cursorPos = { x: 10, y: 10 };
 
     // トラックパッド内の座標
     this.trackPos = { x: 0, y: 0 };
