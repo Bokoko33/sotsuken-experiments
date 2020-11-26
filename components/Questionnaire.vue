@@ -45,10 +45,10 @@ export default {
   },
   computed: {
     nextPath() {
-      if (this.$store.state.expNumber === this.$store.state.totalExpNum) {
-        return 'finished';
-      } else {
+      if (this.$store.state.expNumber < this.$store.state.totalExpNum) {
         return 'normal';
+      } else {
+        return 'finished';
       }
     },
   },
@@ -57,6 +57,9 @@ export default {
       this.selectedId = id;
     },
     setAnswer() {
+      // console.log(
+      //   this.$store.state.expNumber + '/' + this.$store.state.totalExpNum
+      // );
       this.$store.commit('setAnswer', this.selectedId);
     },
   },
