@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <h1 class="intro__heading">実験についての説明</h1>
-    <p class="intro__note">全て読んでから次に進んでください。</p>
+    <p class="intro__note">*全て読んでから次に進んでください。</p>
     <div class="intro__desc-pc">
       <p class="intro__text">
         この実験サイトでは、動きを遅延したカーソルを操作していただき、抵抗感を感じたかどうかの検証を行います。<br />
@@ -47,7 +47,11 @@
     </div>
     <div class="intro__desc-sp">
       <p class="intro__text">
-        この実験サイトでは、スマートフォンから操作する場合にもマウスカーソルを用います。次のページから、画面右下に仮想のトラックパッドが出現するので、そこから操作してください。<br />
+        この実験サイトでは、スマートフォンから操作する場合にもマウスカーソルを用います。<strong
+          class="intro__strong"
+          >次のページから、画面右下に仮想のトラックパッドが出現する</strong
+        >ので、そこから操作してください。<br />
+        <br />
         本実験では、動きを遅延したカーソルを操作していただき、抵抗感を感じたかどうかの検証を行います。<br />
         遅延したカーソルと通常状態のカーソルの操作感を何度か比較していただき、その都度アンケートに答えていただきます。<br />
         所要時間は<strong class="intro__strong">5分〜10分</strong
@@ -101,6 +105,10 @@ export default {
   }
 }
 
+.intro__note {
+  color: red;
+}
+
 .intro__desc {
   margin-top: 40px;
 }
@@ -152,10 +160,13 @@ export default {
   color: orange;
   border-radius: 6px;
 
-  margin: 100px auto 0;
+  margin: 10vh auto 0;
   &:hover {
     color: white;
     background-color: orange;
+  }
+  @include device-touch {
+    margin-bottom: 5vh;
   }
 }
 </style>
