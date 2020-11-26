@@ -19,7 +19,7 @@ export const mutations = {
     state.defaultMouseSpeed = value;
   },
   addExpNumber(state) {
-    state.expNumber++;
+    if (state.expNumber < state.totalExpNum) state.expNumber++;
   },
   setAnswer(state, id) {
     // spだと最後だけ謎に二回呼ばれるのでそれの回避
