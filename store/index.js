@@ -22,6 +22,7 @@ export const mutations = {
     state.expNumber++;
   },
   setAnswer(state, id) {
+    if (state.expNumber > state.totalExpNum) return;
     state.questAnswer[state.expNumber - 1] = id;
   },
 };
