@@ -101,7 +101,8 @@ export default {
   line-height: 1.6;
   cursor: auto;
   @include device-touch {
-    padding-top: 40px;
+    padding: 40px 10vw 40px;
+    height: auto;
   }
 }
 
