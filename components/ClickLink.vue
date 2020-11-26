@@ -79,7 +79,7 @@ export default {
 
         if (this.$route.name === 'normal') {
           // ノーマルカーソル提示ページでのクリックでは抗力変更
-          this.$interFace.changeForce();
+          this.$interFace.changeForce(this.$store.state.expNumber - 1);
         } else {
           // それ以外の実験ページでのクリックはカウントアップと抗力リセット
           this.$store.commit('addExpNumber');
