@@ -84,6 +84,7 @@ export default {
   padding: 40px;
   @include device-touch {
     height: 90%;
+    padding: 3vh 8vw;
   }
 }
 
@@ -97,7 +98,7 @@ export default {
 .quest__question {
   margin-top: 10vh;
   @include device-touch {
-    margin-top: 5vh;
+    margin-top: 1vh;
   }
 }
 
