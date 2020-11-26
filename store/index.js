@@ -22,6 +22,7 @@ export const mutations = {
     state.expNumber++;
   },
   setAnswer(state, id) {
+    // spだと最後だけ謎に二回呼ばれるのでそれの回避
     if (state.expNumber > state.totalExpNum) return;
     state.questAnswer[state.expNumber - 1] = id;
   },
