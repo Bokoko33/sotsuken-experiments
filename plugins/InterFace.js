@@ -19,7 +19,7 @@ class InterFace {
     this.isDrag = false;
 
     // トラックパッド感度（1で完全に同距離）
-    this.sensitivity = 3;
+    this.sensitivity = 2;
 
     this.breakPoint = Number(style.breakPointTablet.replace('px', ''));
 
@@ -40,7 +40,7 @@ class InterFace {
     ];
 
     this.forcePattern = Math.floor(Math.random() * 3); // 抗力提示のパターン0,1,2
-    this.forceIndex = 0; // 現在の抗力インデックス
+    // this.forceIndex = 0; // 現在の抗力インデックス
     this.forceEqualInterval = [
       [0.2, 0.7, 0.3, 0.6, 0.5, 0.9, 0.4, 0.1, 0.8],
       [0.3, 0.8, 0.9, 0.4, 0.6, 0.2, 0.1, 0.5, 0.7],
@@ -161,9 +161,8 @@ class InterFace {
     }
   }
 
-  changeForce() {
-    this.force = this.forceEqualInterval[this.forcePattern][this.forceIndex];
-    this.forceIndex++;
+  changeForce(index) {
+    this.force = this.forceEqualInterval[this.forcePattern][index];
   }
 
   setDefaultForce() {
