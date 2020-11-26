@@ -60,8 +60,11 @@ export default {
       if (!this.buttonActive) return;
 
       const submitParams = new FormData();
+      const deviceType =
+        window.innerWidth > this.$store.state.breakPoint ? 'PC' : 'SP';
 
-      const answer = `抵抗力提示パターン : ${this.$interFace.forcePattern}
+      const answer = `使用デバイス : ${deviceType}
+                      抵抗力提示パターン : ${this.$interFace.forcePattern}
                       普段のポインター速度 : ${this.$store.state.defaultMouseSpeed}
                       タスクごとの回答 : ${this.$store.state.questAnswer}
                       最後のコメント : ${this.comment}`;
