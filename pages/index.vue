@@ -10,7 +10,7 @@
         >程度です。時間の計測は特に行っていませんので、あまり実験を意識せず普段通り操作してください。
       </p>
       <p class="intro__text">
-        本実験にご参加の前に以下の設定をお願いいたします。
+        本実験にご協力いただく前に以下の設定をお願いいたします。
       </p>
       <ol class="intro__list">
         <li class="intro__list-item">
@@ -35,7 +35,9 @@
           </select>
         </li>
         <li class="intro__list-item">
-          ・ポインターの速さを
+          ・入力が完了しましたら、<strong class="intro__strong"
+            >システム環境設定</strong
+          >からポインターの速さを
           <strong class="intro__strong">遅い方から3番目</strong>
           に設定し直してください。
         </li>
@@ -58,6 +60,10 @@
         >程度です。時間の計測は特に行っていませんので、あまり実験を意識せず普段通り操作してください。
       </p>
     </div>
+    <br />
+    <p class="intro__note">
+      *ブラウザの「戻る」ボタンの使用、リロードはしないでください。不具合などありましたら、お手数ですが依頼者までご報告いただけますと幸いです。
+    </p>
     <div to="/normal" class="intro__link" @click="clicked">始める</div>
   </div>
 </template>
