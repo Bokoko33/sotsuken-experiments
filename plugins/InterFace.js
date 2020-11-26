@@ -51,7 +51,7 @@ class InterFace {
     this.force = 1;
 
     // リサイズイベント登録
-    window.addEventListener('resize', this.initTransform);
+    window.addEventListener('resize', this.resize.bind(this));
 
     this.cursorInit();
     this.trackPadInit();
