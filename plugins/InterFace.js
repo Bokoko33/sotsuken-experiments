@@ -3,6 +3,7 @@ import style from '~/assets/scss/base/_variable.scss';
 
 class InterFace {
   constructor() {
+    this.windowSize = { w: window.innerWidth, h: window.innerHeight };
     this.cursor = document.getElementById('cursor');
     this.trackpad = document.getElementById('trackpad');
     // 入力座標
@@ -49,6 +50,9 @@ class InterFace {
     // 抵抗値（小さいほど強い抵抗)
     this.force = 1;
 
+    // リサイズイベント登録
+    window.addEventListener('resize', this.initTransform);
+
     this.cursorInit();
     this.trackPadInit();
   }
@@ -64,7 +68,7 @@ class InterFace {
 
   mouseMoved(e) {
     // スマホ時は実行しない
-    if (window.innerWidth < this.breakPoint) return;
+    if (this.windowSize.w < this.breakPoint) return;
     this.inputPos.x = e.clientX;
     this.inputPos.y = e.clientY;
   }
@@ -119,19 +123,24 @@ class InterFace {
     if (this.cursorPos.x < 0) {
       this.cursorPos.x = 0;
     }
-    if (this.cursorPos.x > window.innerWidth) {
-      this.cursorPos.x = window.innerWidth;
+    if (this.cursorPos.x > this.windowSize.w) {
+      this.cursorPos.x = this.windowSize.w;
     }
     if (this.cursorPos.y < 0) {
       this.cursorPos.y = 0;
     }
-    if (this.cursorPos.y > window.innerHeight) {
-      this.cursorPos.y = window.innerHeight;
+    if (this.cursorPos.y > this.windowSize.h) {
+      this.cursorPos.y = this.windowSize.h;
     }
 
     // カーソルに座標を適用
     this.cursor.style.transform =
       'translate(' + this.cursorPos.x + 'px, ' + this.cursorPos.y + 'px)';
+  }
+
+  resize() {
+    this.windowSize.w = window.innerWidth;
+    this.windowSize.h = window.innerHeight;
   }
 
   addEvent(callback) {
