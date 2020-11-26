@@ -48,7 +48,13 @@ export default {
     },
     addCurrentNum() {
       this.currentNum++;
-      if (this.currentNum > this.clickPointsLength) this.showQuest = true;
+
+      if (this.currentNum > this.clickPointsLength) {
+        // 時間差をつけないとアンケートがクリック済みになる
+        setTimeout((e) => {
+          this.showQuest = true;
+        }, 200);
+      }
     },
   },
 };
