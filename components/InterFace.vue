@@ -1,6 +1,8 @@
 <template>
   <div class="interface">
-    <div id="trackpad" class="trackpad"></div>
+    <div id="trackpad" class="trackpad">
+      <p class="trackpad__text">ここを指で操作してください</p>
+    </div>
     <div id="cursor" class="cursor">
       <img
         class="cursor__image"
@@ -28,18 +30,25 @@ export default {
 <style lang="scss" scoped>
 .trackpad {
   display: none;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 35vw;
-  height: 35vh;
-  background-color: skyblue;
-  opacity: 0.5;
-  border-radius: 10px;
-  z-index: 100000;
   @include device-touch {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 35vw;
+    height: 35vh;
+    background-color: skyblue;
+    opacity: 0.5;
+    border-radius: 10px;
+    z-index: 100000;
+    padding: 8% 10px;
   }
+}
+
+.trackpad__text {
+  writing-mode: vertical-rl;
 }
 
 .cursor {
