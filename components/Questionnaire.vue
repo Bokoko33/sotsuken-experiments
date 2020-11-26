@@ -94,7 +94,7 @@ export default {
 .quest__heading {
   text-align: center;
   @include device-touch {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -102,6 +102,7 @@ export default {
   margin-top: 10vh;
   @include device-touch {
     margin-top: 1vh;
+    text-align: center;
   }
 }
 
