@@ -110,8 +110,8 @@ export default {
   justify-content: center;
   position: relative;
   @include device-touch {
-    width: 40px;
-    height: 40px;
+    width: 11vw;
+    height: 11vw;
     margin-right: 20px;
   }
 }
