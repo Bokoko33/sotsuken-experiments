@@ -26,20 +26,27 @@ class InterFace {
     // クリックイベントを配列で持っておく
     this.clickEventList = [];
 
+    this.forcePattern = Math.floor(Math.random() * 3); // 抗力提示のパターン0,1,2
+
     this.forceList = [
-      1,
-      0.5,
-      0.25,
-      0.1,
-      0.075,
-      0.05,
-      0.025,
-      0.01,
-      0.0075,
-      0.005,
+      [0.25, 0.05, 0.075, 0.025, 0.0075, 0.5, 1, 0.1, 0.005, 0.01],
+      [0.01, 0.25, 0.05, 0.1, 0.025, 0.005, 0.5, 0.075, 1, 0.0075],
+      [0.05, 0.5, 0.1, 0.01, 0.075, 0.0075, 0.005, 0.25, 1, 0.025],
     ];
 
-    this.forcePattern = Math.floor(Math.random() * 3); // 抗力提示のパターン0,1,2
+    // this.forceList = [
+    //   1,
+    //   0.5,
+    //   0.25,
+    //   0.1,
+    //   0.075,
+    //   0.05,
+    //   0.025,
+    //   0.01,
+    //   0.0075,
+    //   0.005,
+    // ];
+
     // this.forceIndex = 0; // 現在の抗力インデックス
     this.forceEqualInterval = [
       [0.2, 0.7, 0.3, 0.6, 0.5, 0.9, 0.4, 0.1, 0.8],
@@ -162,7 +169,7 @@ class InterFace {
   }
 
   changeForce(index) {
-    this.force = this.forceEqualInterval[this.forcePattern][index];
+    this.force = this.forceList[this.forcePattern][index];
   }
 
   setDefaultForce() {
