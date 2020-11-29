@@ -9,6 +9,18 @@
         所要時間は<strong class="intro__strong">5分〜10分</strong
         >程度です。時間の計測は特に行っていませんので、あまり実験を意識せず普段通り操作してください。
       </p>
+      <div class="intro__images">
+        <img
+          class="intro__images-item"
+          src="@/assets/images/intro_cursor-normal.png"
+          alt="通常状態のカーソルイメージ"
+        />
+        <img
+          class="intro__images-item"
+          src="@/assets/images/intro_cursor-delay.png"
+          alt="通常状態のカーソルイメージ"
+        />
+      </div>
       <p class="intro__text">
         本実験にご協力いただく前に以下の設定をお願いいたします。
       </p>
@@ -54,8 +66,21 @@
           >次のページから、画面右下に仮想のトラックパッドが出現する</strong
         >ので、そこから操作してください。<br />
         <br />
-        本実験では、動きを遅延したカーソルを操作していただき、抵抗感を感じたかどうかの検証を行います。<br />
-        遅延したカーソルと通常状態のカーソルの操作感を何度か比較していただき、その都度アンケートに答えていただきます。<br />
+        本実験では、動きを遅延したカーソルと通常状態のカーソルの操作感を何度か比較していただき、その都度アンケートに答えていただきます。
+      </p>
+      <div class="intro__images--sp">
+        <img
+          class="intro__images-item--sp"
+          src="@/assets/images/intro_cursor-normal.png"
+          alt="通常状態のカーソルイメージ"
+        />
+        <img
+          class="intro__images-item--sp"
+          src="@/assets/images/intro_cursor-delay.png"
+          alt="通常状態のカーソルイメージ"
+        />
+      </div>
+      <p class="intro__text">
         所要時間は<strong class="intro__strong">5分〜10分</strong
         >程度です。時間の計測は特に行っていませんので、あまり実験を意識せず普段通り操作してください。
       </p>
@@ -96,8 +121,7 @@ export default {
 <style lang="scss" scoped>
 .intro {
   width: 100vw;
-  height: 100vh;
-  padding: 8vh 10vw 0;
+  padding: 8vh 10vw 80px;
   line-height: 1.6;
   cursor: auto;
   @include device-touch {
@@ -136,6 +160,17 @@ export default {
 
 .intro__text {
   margin-top: 40px;
+  @include device-touch {
+    margin-top: 26px;
+  }
+}
+
+.intro__images-item {
+  width: 10vw;
+}
+
+.intro__images-item--sp {
+  width: 30vw;
 }
 
 .intro__list-item {
