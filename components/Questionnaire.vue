@@ -32,13 +32,15 @@ export default {
   data() {
     return {
       radios: [
+        { id: -4, text: '軽すぎる' },
         { id: -3, text: 'かなり軽い' },
         { id: -2, text: '軽い' },
         { id: -1, text: 'やや軽い' },
         { id: 0, text: '変わらない' },
-        { id: 1, text: 'やや重たい' },
-        { id: 2, text: '重たい' },
-        { id: 3, text: 'かなり重たい' },
+        { id: 1, text: 'やや重い' },
+        { id: 2, text: '重い' },
+        { id: 3, text: 'かなり重い' },
+        { id: 4, text: '重すぎる' },
       ],
       selectedId: 999, // 初期値
     };
@@ -80,6 +82,7 @@ export default {
 }
 
 .quest__content {
+  position: relative;
   width: 90%;
   height: 80%;
   max-width: 1000px;
@@ -94,15 +97,16 @@ export default {
 .quest__heading {
   text-align: center;
   @include device-touch {
-    font-size: 16px;
+    font-size: 4.6vw;
   }
 }
 
 .quest__question {
   margin-top: 10vh;
+  text-align: center;
   @include device-touch {
     margin-top: 1vh;
-    text-align: center;
+    font-size: 4.5vw;
   }
 }
 
@@ -114,6 +118,7 @@ export default {
   margin-top: 20px;
   @include device-touch {
     flex-direction: column;
+    width: 60%;
   }
   // &::before {
   //   display: block;
@@ -137,7 +142,10 @@ export default {
   width: 100px;
   margin: 20vh auto 0;
   @include device-touch {
-    margin-top: 5vh;
+    position: absolute;
+    top: 40vh;
+    right: 5vw;
+    margin: 0;
   }
 }
 </style>
