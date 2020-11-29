@@ -1,6 +1,6 @@
 import style from '~/assets/scss/base/_variable.scss';
 
-const totalExpNum = 9;
+const totalExpNum = 10;
 const questAnswer = [];
 for (let i = 0; i < totalExpNum; i++) {
   questAnswer[i] = 999; // 初期値
