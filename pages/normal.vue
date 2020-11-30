@@ -4,6 +4,9 @@
       こちらが通常のカーソルの動きです。<br />
       しばらく操作し確認したら「次へ」を押してください。
     </h1>
+    <p v-if="$store.state.expNumber === 1" class="normal__note">
+      *カーソルの判定がズレている場合は、お手数ですがSafari等で開き直してください
+    </p>
     <div class="normal__link">
       <ClickLink :next-path="'experiment'" :disabled="false" />
     </div>
@@ -48,6 +51,16 @@
   text-align: center;
   @include device-touch {
     font-size: 16px;
+  }
+}
+
+.normal__note {
+  display: none;
+  @include device-touch {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: red;
   }
 }
 
