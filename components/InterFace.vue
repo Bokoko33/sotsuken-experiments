@@ -1,7 +1,7 @@
 <template>
   <div class="interface">
     <div id="trackpad" class="trackpad">
-      <!-- <p class="trackpad__text">ここを指で操作してください</p> -->
+      <p class="trackpad__text">ここを指で操作してください</p>
     </div>
     <div id="cursor" class="cursor">
       <img
